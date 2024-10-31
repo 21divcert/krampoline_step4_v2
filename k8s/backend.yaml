@@ -15,7 +15,7 @@ spec:
       containers:
         - name: backend
           # 여러분의 backend image 주소를 입력해주세요.
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_b4642dd9c80a
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_e7bacfddf458
           env:
             - name: TZ
               value: Asia/Seoul
@@ -37,5 +37,5 @@ spec:
   selector:
     app: backend
   ports:
-    - port: 8080
-      targetPort: 8080
+    - port: 8080  # 외부에서 접근하는 포트는 8080으로 유지할 수 있음
+      targetPort: 8000  # Django 내부 컨테이너의 포트를 8000으로 설정
